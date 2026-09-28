@@ -50,9 +50,9 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   const isOutOfStock = product.availability === 'Out of Stock';
 
   const sizeStyles = {
-    sm: 'px-3 py-1.5 text-xs',
-    md: 'px-4 py-2.5 text-sm font-semibold',
-    lg: 'px-6 py-3.5 text-base font-bold',
+    sm: 'px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs',
+    md: 'px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold',
+    lg: 'px-4 sm:px-6 py-3 sm:py-3.5 text-sm sm:text-base font-bold',
   };
 
   if (variant === 'compact') {
@@ -69,7 +69,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
         } ${className}`}
         title="Add to cart"
       >
-        {isAdded ? <Check className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
+        {isAdded ? <Check className="w-4 h-4 shrink-0" /> : <ShoppingBag className="w-4 h-4 shrink-0" />}
       </button>
     );
   }
@@ -78,7 +78,7 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
     <button
       onClick={handleAdd}
       disabled={isOutOfStock}
-      className={`inline-flex items-center justify-center gap-2 rounded-xl transition-all duration-200 shadow-sm ${
+      className={`inline-flex items-center justify-center gap-1 sm:gap-2 rounded-xl transition-all duration-200 shadow-sm ${
         isOutOfStock
           ? 'bg-stone-200 text-stone-400 cursor-not-allowed border-stone-200'
           : variant === 'outline'
@@ -90,13 +90,13 @@ export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
     >
       {isAdded ? (
         <>
-          <Check className="w-4 h-4" />
-          <span>Added to Cart</span>
+          <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+          <span className="truncate">Added</span>
         </>
       ) : (
         <>
-          <ShoppingBag className="w-4 h-4" />
-          <span>{isOutOfStock ? 'Out of Stock' : 'Add to Cart'}</span>
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+          <span className="truncate">{isOutOfStock ? 'Sold Out' : 'Add to Cart'}</span>
         </>
       )}
     </button>

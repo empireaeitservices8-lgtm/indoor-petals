@@ -32,9 +32,10 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -56,12 +57,14 @@ export const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled ? 'glass-nav shadow-md py-2.5' : 'bg-white/95 backdrop-blur-md py-3.5 border-b border-stone-200/80'
+        className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-stone-200/80'
+            : 'bg-white/95 backdrop-blur-md py-3.5 border-b border-stone-200/80'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* Logo */}
             <Logo />
 
@@ -141,26 +144,26 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Header Right Action Icons */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-1 sm:gap-2.5">
               {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2.5 rounded-full hover:bg-stone-100 text-stone-700 transition-colors flex items-center gap-2"
+                className="p-2 sm:p-2.5 rounded-full hover:bg-stone-100 text-stone-700 transition-colors flex items-center gap-1.5"
                 aria-label="Open Search"
               >
-                <Search className="w-5 h-5" />
+                <Search className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="hidden xl:inline text-xs font-semibold text-stone-500">Search plants...</span>
               </button>
 
               {/* Wishlist Button with Badge */}
               <Link
                 href="/wishlist"
-                className="p-2.5 rounded-full hover:bg-rose-50 text-stone-700 hover:text-rose-600 transition-colors relative"
+                className="p-2 sm:p-2.5 rounded-full hover:bg-rose-50 text-stone-700 hover:text-rose-600 transition-colors relative"
                 aria-label="Wishlist"
               >
-                <Heart className="w-5 h-5" />
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                 {totalWishlistItems > 0 && (
-                  <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-black flex items-center justify-center shadow-xs">
+                  <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-black flex items-center justify-center shadow-xs">
                     {totalWishlistItems}
                   </span>
                 )}
@@ -169,12 +172,12 @@ export const Header: React.FC = () => {
               {/* Cart Drawer Trigger with Badge */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="p-2.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-900 transition-colors relative"
+                className="p-2 sm:p-2.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-900 transition-colors relative"
                 aria-label="Open Cart"
               >
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-emerald-700 text-white text-[10px] font-black flex items-center justify-center shadow-xs animate-bounce">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-emerald-700 text-white text-[9px] sm:text-[10px] font-black flex items-center justify-center shadow-xs">
                     {totalItems}
                   </span>
                 )}
@@ -194,22 +197,25 @@ export const Header: React.FC = () => {
               {/* Mobile Menu Hamburger */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2.5 rounded-xl bg-stone-100 text-stone-800 hover:bg-stone-200 transition-colors"
+                className="lg:hidden p-2 sm:p-2.5 rounded-xl bg-stone-100 text-stone-800 hover:bg-stone-200 transition-colors"
                 aria-label="Toggle Mobile Menu"
               >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
+      {/* Layout Spacer so content begins right below the fixed navbar */}
+      <div className="h-[68px] sm:h-[76px] w-full shrink-0" aria-hidden="true" />
+
       {/* Global Search Modal */}
       <SearchBar isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       {/* Mobile Drawer Navigation */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden bg-emerald-950/70 backdrop-blur-xs animate-fade-in">
+        <div className="fixed inset-0 z-[60] lg:hidden bg-emerald-950/70 backdrop-blur-xs animate-fade-in">
           <div className="bg-white w-4/5 max-w-sm h-full p-6 flex flex-col justify-between overflow-y-auto shadow-2xl animate-slide-up">
             <div className="space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-stone-100">
