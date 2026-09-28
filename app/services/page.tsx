@@ -23,12 +23,30 @@ export default function ServicesPage() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [city, setCity] = useState('');
+  const [pincode, setPincode] = useState('');
   const [notes, setNotes] = useState('');
 
   const handleBooking = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !phone) {
-      showToast('Please provide your name and phone number.', 'error');
+    if (!name.trim()) {
+      showToast('Please provide your name.', 'error');
+      return;
+    }
+    if (phone.length !== 10) {
+      showToast('Phone number must be exactly 10 digits.', 'error');
+      return;
+    }
+    const cleanEmail = email.trim().toLowerCase();
+    if (!cleanEmail || !cleanEmail.endsWith('@gmail.com') || cleanEmail.startsWith('@')) {
+      showToast('Email must be a valid @gmail.com address.', 'error');
+      return;
+    }
+    if (!city.trim()) {
+      showToast('Please provide your location or city.', 'error');
+      return;
+    }
+    if (pincode.length !== 6) {
+      showToast('Pincode must be exactly 6 digits.', 'error');
       return;
     }
     showToast(`Thank you ${name}! Our landscape horticulturist will contact you within 4 hours to confirm your site visit. 🌿`, 'success');
@@ -36,6 +54,7 @@ export default function ServicesPage() {
     setPhone('');
     setEmail('');
     setCity('');
+    setPincode('');
     setNotes('');
   };
 
@@ -212,43 +231,65 @@ export default function ServicesPage() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                  Phone Number / WhatsApp *
+                  Phone Number *
                 </label>
                 <input
                   type="tel"
+                  inputMode="numeric"
+                  maxLength={10}
                   required
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+91 98470 12345"
+                  onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                  placeholder="10-digit mobile number"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm outline-none focus:border-emerald-600"
                 />
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                  Email Address
+                  Email Address *
                 </label>
                 <input
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@company.com"
+                  placeholder="yourname@gmail.com"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm outline-none focus:border-emerald-600"
                 />
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                Location / City &amp; Pincode
-              </label>
-              <input
-                type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="e.g. Kakkanad, Kochi (Pincode: 682020)"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm outline-none focus:border-emerald-600"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                  Location / City *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="e.g. Kakkanad, Kochi"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm outline-none focus:border-emerald-600"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                  Pincode *
+                </label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={6}
+                  required
+                  value={pincode}
+                  onChange={(e) => setPincode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                  placeholder="6-digit pincode"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm outline-none focus:border-emerald-600"
+                />
+              </div>
             </div>
 
             <div>
