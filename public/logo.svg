@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" width="100%" height="100%" fill="none">
+  <!-- Brand Icon Group -->
+  <g transform="translate(10, 5)">
+    <!-- Outer delicate gold glow/circle -->
+    <circle cx="40" cy="40" r="38" fill="#133E2B" stroke="#A3E635" stroke-width="1.5" stroke-opacity="0.3"/>
+    
+    <!-- Botanical Petals / Leaf Emblem -->
+    <!-- Left Leaf Petal -->
+    <path d="M40 18 C28 26 24 42 32 54 C36 60 40 64 40 64 C40 64 44 60 48 54 C56 42 52 26 40 18 Z" fill="#22C55E" opacity="0.9"/>
+    <!-- Overlapping Inner Golden Petal -->
+    <path d="M40 24 C33 30 31 43 36 51 C38 55 40 58 40 58 C40 58 42 55 44 51 C49 43 47 30 40 24 Z" fill="#FACC15" opacity="0.85"/>
+    <!-- Center Leaf Sprout -->
+    <path d="M40 12 C39 22 35 32 26 38 C35 37 40 32 40 20 Z" fill="#4ADE80"/>
+    <path d="M40 12 C41 22 45 32 54 38 C45 37 40 32 40 20 Z" fill="#86EFAC"/>
+    <!-- Stem Line -->
+    <line x1="40" y1="28" x2="40" y2="65" stroke="#064E3B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography Brand Title -->
+  <text x="105" y="44" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Outfit', sans-serif" font-size="28" font-weight="800" letter-spacing="3.5" fill="#064E3B">
+    INDOOR <tspan fill="#15803D">PETALS</tspan>
+  </text>
+  
+  <!-- Subtitle Tagline -->
+  <text x="106" y="66" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Outfit', sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.2" fill="#4B5563">
+    INDOOR PLANTS &amp; GARDENING SOLUTIONS
+  </text>
+
+  <!-- Small accent gold leaf dot -->
+  <circle cx="395" cy="40" r="3.5" fill="#EAB308"/>
+</svg>
