@@ -36,7 +36,9 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  const categoryProducts = products.filter((p) => p.category === params.category);
+  const categoryProducts = products.filter(
+    (p) => p.category === params.category || (params.category === 'plant-accessories' && (p.category === 'clay-balls' || p.category === 'plant-stones-pebbles'))
+  );
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#faf8f5]">

@@ -12,7 +12,7 @@ export const categories: Category[] = [
   },
   {
     id: 'cat-2',
-    name: 'Artificial plants',
+    name: 'Artificial Plants',
     slug: 'artificial-plants',
     icon: '🎋',
     description: 'Hyper-realistic faux botanical plants with zero watering and zero maintenance.',
@@ -75,7 +75,7 @@ export const categories: Category[] = [
   },
   {
     id: 'cat-9',
-    name: 'Plant Fertilizers',
+    name: 'Fertilizers',
     slug: 'plant-fertilizers',
     icon: '🌱',
     description: 'Organic seaweed extracts, balanced NPK tonics, and slow-release potting nutrients.',
@@ -116,6 +116,15 @@ export const categories: Category[] = [
     icon: '🔄',
     description: 'Flexible corporate, wedding, and event green rentals with scheduled weekly maintenance.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+    itemCount: 2,
+  },
+  {
+    id: 'cat-14',
+    name: 'Plant Accessories',
+    slug: 'plant-accessories',
+    icon: '🪴',
+    description: 'Gardening tools, precision sprayers, plant stands, and premium botanical accessories.',
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80',
     itemCount: 2,
   },
 ];

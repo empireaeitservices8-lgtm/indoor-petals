@@ -793,5 +793,63 @@ export const products: Product[] = [
     popular: true,
     isRental: true,
     tags: ['Wedding Decor', 'Event Rental', 'Turnkey Setup']
+  },
+
+  // 14. 🪴 Plant Accessories
+  {
+    id: 'prod-acc-1',
+    productCode: 'IP-ACC-1401',
+    name: 'Vintage Brass Mist Sprayer & Pruning Shears Kit',
+    slug: 'vintage-brass-mist-sprayer-pruning-shears-kit',
+    category: 'plant-accessories',
+    categoryName: 'Plant Accessories',
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Ultra-fine brass mist atomizer paired with Japanese carbon steel precision bonsai trimming shears. Perfect for daily tropical foliage misting and precision deadheading.',
+    price: 699,
+    mrp: 999,
+    potType: 'Solid Antique Brass Finish',
+    plantSize: '300ml Mister + 7-inch Shears',
+    potSize: 'Standard',
+    plantCare: 'Rinse brass mister with clean water after use. Wipe cutting blades dry after pruning.',
+    wateringRequirement: 'Delivers micro-droplet humidity spray for sensitive leaves',
+    lightRequirement: 'Indoor Gardening Tool Kit',
+    stock: 25,
+    availability: 'In Stock',
+    rating: 4.9,
+    reviewsCount: 38,
+    featured: true,
+    popular: true,
+    tags: ['Brass Mister', 'Pruning Shears', 'Plant Care Tools']
+  },
+  {
+    id: 'prod-acc-2',
+    productCode: 'IP-ACC-1402',
+    name: 'Nordic Solid Teak Multi-Tier Plant Stand',
+    slug: 'nordic-solid-teak-multi-tier-plant-stand',
+    category: 'plant-accessories',
+    categoryName: 'Plant Accessories',
+    image: 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Minimalist Scandinavian teak wood plant riser with moisture-resistant natural wax polish. Elevates ceramic planters to capture optimal ambient window light.',
+    price: 1199,
+    mrp: 1799,
+    potType: 'Solid Natural Teak Wood',
+    plantSize: 'Height: 18 inches (Supports up to 25kg)',
+    potSize: 'Accommodates 6 to 10 inch pots',
+    plantCare: 'Wipe with dry microfiber cloth.',
+    wateringRequirement: 'Moisture resistant clear-coat finish',
+    lightRequirement: 'Indoor / Covered Balcony',
+    stock: 18,
+    availability: 'In Stock',
+    rating: 4.8,
+    reviewsCount: 22,
+    featured: false,
+    popular: true,
+    tags: ['Teak Stand', 'Planter Riser', 'Nordic Decor']
   }
 ];

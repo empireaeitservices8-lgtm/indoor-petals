@@ -78,6 +78,35 @@ h1, h2, h3, h4, .font-display {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
+/* ============================
+   Hero Heading Responsive Typography
+   Single line on desktop, clamp() fluid typography, pure white #FFFFFF
+   ============================ */
+.hero-heading {
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+@media (min-width: 640px) {
+  .hero-heading {
+    font-size: clamp(36px, 5.5vw, 46px);
+    line-height: 1.15;
+    color: #FFFFFF;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-heading {
+    font-size: clamp(42px, 4vw, 68px);
+    line-height: 1.1;
+    white-space: nowrap;
+    color: #FFFFFF;
+  }
+}
+
 /* Glassmorphism Classes */
 .glass-nav {
   background: rgba(255, 255, 255, 0.88);
@@ -130,6 +159,24 @@ h1, h2, h3, h4, .font-display {
 
 .animate-pulse-subtle {
   animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Continuous Moving Marquee Animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Custom Botanical Scrollbar */

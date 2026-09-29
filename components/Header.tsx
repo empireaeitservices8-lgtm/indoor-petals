@@ -63,13 +63,13 @@ export const Header: React.FC = () => {
             : 'bg-white/95 backdrop-blur-md py-3.5 border-b border-stone-200/80'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* Logo */}
             <Logo />
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-7">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
 
@@ -208,7 +208,7 @@ export const Header: React.FC = () => {
       </header>
 
       {/* Layout Spacer so content begins right below the fixed navbar */}
-      <div className="h-[68px] sm:h-[76px] w-full shrink-0" aria-hidden="true" />
+      <div className="h-[74px] sm:h-[82px] w-full shrink-0" aria-hidden="true" />
 
       {/* Global Search Modal */}
       <SearchBar isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
