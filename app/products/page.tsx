@@ -101,7 +101,7 @@ function ProductsContent() {
   const selectedCategoryObj = categories.find((c) => c.slug === filters.category);
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#f4f7f4]">
+    <div className="flex flex-col w-full min-h-screen bg-[#a8e07a]">
       {/* Header Banner */}
       <section className="bg-emerald-950 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
