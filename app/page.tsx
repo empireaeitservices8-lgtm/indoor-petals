@@ -38,19 +38,30 @@ export default function HomePage() {
   );
   const landscapingService = services.find((s) => s.slug === 'landscaping') || services[1];
 
-  // SHOP BY CATEGORY — Exactly the 8 required categories in requested order
+  // SHOP BY CATEGORY — Categories in requested order including Plastic Pots
   const homepageCategorySlugs = [
     'indoor-plants',
     'tabletop-plants',
     'large-plants',
     'ceramic-pots',
+    'plastic-pots-planters',
     'outdoor-plants',
     'artificial-plants',
     'plant-fertilizers',
     'plant-accessories',
   ];
   const homepageCategories = homepageCategorySlugs
-    .map((slug) => categories.find((c) => c.slug === slug))
+    .map((slug) => {
+      const cat = categories.find((c) => c.slug === slug);
+      if (!cat) return null;
+      if (slug === 'plastic-pots-planters') {
+        return {
+          ...cat,
+          name: 'Plastic Pots',
+        };
+      }
+      return cat;
+    })
     .filter(Boolean) as typeof categories;
 
   // BEST SELLING — featured/popular products
@@ -138,9 +149,14 @@ export default function HomePage() {
               </p>
 
               {/* Main Heading — single line on desktop, pure #FFFFFF across all words */}
-              <h1 className="hero-heading text-white">
-                Bring Nature Into Your Space
-              </h1>
+              <div>
+                <h1 className="hero-heading text-white">
+                  INDOOR PETALS
+                </h1>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-100 mt-2 sm:mt-2.5">
+                  Bring Nature Into Your Space
+                </p>
+              </div>
 
               {/* Description */}
               <p className="text-sm sm:text-base lg:text-lg text-emerald-100/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -301,8 +317,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 8 Categories Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-5">
+          {/* Categories Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3.5 sm:gap-5">
             {homepageCategories.map((category) => (
               <Link
                 key={category.id}
