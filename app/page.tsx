@@ -148,12 +148,15 @@ export default function HomePage() {
                 Indoor Plants • Plant Rental • Landscaping • Plant Maintenance
               </p>
 
-              {/* Main Heading — single line on desktop, pure #FFFFFF across all words */}
+              {/* Main Heading — Indoor Petals Logo */}
               <div>
-                <h1 className="hero-heading text-white">
-                  INDOOR PETALS
-                </h1>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-100 mt-2 sm:mt-2.5">
+                <h1 className="sr-only">Indoor Petals</h1>
+                <img
+                  src="/logo.png"
+                  alt="INDOOR PETALS"
+                  className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain mx-auto lg:mx-0 drop-shadow-xl"
+                />
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-100 mt-3 sm:mt-3.5">
                   Bring Nature Into Your Space
                 </p>
               </div>
@@ -303,7 +306,7 @@ export default function HomePage() {
       {/* ==================================================
           3. SHOP BY CATEGORY (Single Section — 8 Categories)
           ================================================== */}
-      <section className="w-full py-12 sm:py-16 bg-white border-b border-stone-200/60">
+      <section className="w-full py-12 sm:py-16 bg-[#f4f7f4] border-b border-stone-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
@@ -323,7 +326,7 @@ export default function HomePage() {
               <Link
                 key={category.id}
                 href={`/products/${category.slug}`}
-                className="group flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl bg-stone-50/80 border border-stone-200/70 hover:border-emerald-500/50 hover:bg-emerald-50/50 hover:shadow-lg transition-all duration-300"
+                className="group flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/40 hover:shadow-lg transition-all duration-300 shadow-2xs"
               >
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-white mb-3 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-stone-100">
                   <img
@@ -367,7 +370,7 @@ export default function HomePage() {
       {/* ==================================================
           4. BEST SELLING PLANTS
           ================================================== */}
-      <section className="w-full py-12 sm:py-16 bg-[#faf8f5] border-b border-stone-200/60">
+      <section className="w-full py-12 sm:py-16 bg-[#f4f7f4] border-b border-stone-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>

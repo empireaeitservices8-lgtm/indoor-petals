@@ -41,7 +41,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   );
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#faf8f5]">
+    <div className="flex flex-col w-full min-h-screen bg-[#f4f7f4]">
       {/* Category Hero Banner */}
       <section className="bg-emerald-950 text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">

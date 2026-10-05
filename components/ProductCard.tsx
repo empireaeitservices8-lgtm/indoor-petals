@@ -30,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     return (
       <div className={`flex flex-col sm:flex-row gap-4 p-3.5 rounded-2xl bg-white border border-stone-200/80 hover:border-emerald-500/40 hover:shadow-md transition-all duration-200 group ${className}`}>
         {/* Compact Image */}
-        <div className="relative w-full sm:w-44 h-44 rounded-xl overflow-hidden bg-stone-50 p-2 shrink-0 flex items-center justify-center">
+        <div className="relative w-full sm:w-44 h-44 rounded-xl overflow-hidden bg-white p-2 shrink-0 flex items-center justify-center">
           <Link href={`/product/${product.slug}`} className="block w-full h-full">
             <img
               src={product.image}
@@ -121,7 +121,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className={`flex flex-col h-full rounded-2xl bg-white border border-stone-200/80 hover:border-emerald-500/50 hover:shadow-lg transition-all duration-300 group overflow-hidden ${className}`}>
       {/* Compact Responsive Image Area (Fixed Aspect Ratio - No Cropping) */}
-      <div className="relative aspect-[4/3] w-full bg-[#faf8f5] overflow-hidden flex items-center justify-center p-3 shrink-0">
+      <div className="relative aspect-[4/3] w-full bg-white overflow-hidden flex items-center justify-center p-3 shrink-0">
         <Link href={`/product/${product.slug}`} className="block w-full h-full rounded-xl overflow-hidden flex items-center justify-center">
           <img
             src={product.image}
