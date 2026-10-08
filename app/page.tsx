@@ -154,7 +154,7 @@ export default function HomePage() {
                 <img
                   src="/logo.png"
                   alt="INDOOR PETALS"
-                  className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain mx-auto lg:mx-0 drop-shadow-xl"
+                  className="h-32 sm:h-44 md:h-56 lg:h-64 xl:h-72 max-w-full w-auto object-contain mx-auto lg:mx-0 drop-shadow-2xl"
                 />
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-100 mt-3 sm:mt-3.5">
                   Bring Nature Into Your Space
