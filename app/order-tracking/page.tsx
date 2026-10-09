@@ -17,9 +17,6 @@ export default function OrderTrackingPage() {
             Live Logistics
           </span>
           <h1 className="text-3xl sm:text-4xl font-black">Track Your Plant Shipment</h1>
-          <p className="text-xs sm:text-sm text-emerald-200">
-            Enter your INDOOR PETALS Order ID (e.g. IP-2026-98214) or account email to view live packing, dispatch, and delivery updates.
-          </p>
         </div>
       </section>
 

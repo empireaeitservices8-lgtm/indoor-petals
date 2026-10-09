@@ -208,7 +208,7 @@ export const Header: React.FC = () => {
       </header>
 
       {/* Layout Spacer so content begins right below the fixed navbar */}
-      <div className="h-[74px] sm:h-[82px] w-full shrink-0" aria-hidden="true" />
+      <div className="h-[80px] sm:h-[86px] w-full shrink-0" aria-hidden="true" />
 
       {/* Global Search Modal */}
       <SearchBar isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />

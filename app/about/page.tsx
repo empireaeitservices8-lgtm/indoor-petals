@@ -22,7 +22,7 @@ export default function AboutPage() {
             About INDOOR PETALS
           </h1>
           <p className="text-sm sm:text-base text-emerald-100/90 mt-4 leading-relaxed">
-            Indoor plants, planters, plant-care products, plant rental, landscaping &amp; garden maintenance services എന്നിവ നൽകുന്ന professional plant business.
+            Your one-stop plant specialist offering indoor plants, planters, plant-care essentials, rentals, landscaping, and garden maintenance.
           </p>
         </div>
       </section>

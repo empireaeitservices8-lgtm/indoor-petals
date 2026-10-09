@@ -4,10 +4,16 @@ import Link from 'next/link';
 interface LogoProps {
   variant?: 'light' | 'dark';
   className?: string;
+  imgClassName?: string;
   showSubtitle?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'light', className = '', showSubtitle = true }) => {
+export const Logo: React.FC<LogoProps> = ({
+  variant = 'light',
+  className = '',
+  imgClassName = '',
+  showSubtitle = true,
+}) => {
   return (
     <Link
       href="/"
@@ -16,7 +22,10 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'light', className = '', s
       <img
         src="/logo.png"
         alt="INDOOR PETALS"
-        className="w-[120px] sm:w-[128px] md:w-[140px] lg:w-[165px] xl:w-[175px] h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+        className={
+          imgClassName ||
+          'w-[155px] min-[390px]:w-[170px] sm:w-[180px] md:w-[195px] lg:w-[210px] xl:w-[225px] h-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]'
+        }
         onError={(e) => {
           const el = e.currentTarget as HTMLImageElement;
           el.style.display = 'none';
